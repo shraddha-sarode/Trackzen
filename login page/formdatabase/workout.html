@@ -1,0 +1,815 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home Workout - Activity Tracker</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <link rel="stylesheet" href="wk.css" />
+    <link rel="stylesheet" href="model.css" />
+  </head>
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar">
+      <div class="container">
+        <a href="mainpage.html" class="logo animate__animated animate__fadeIn">
+          <i class="fas fa-chart-line"></i>
+          <span>ActivityTracker</span>
+        </a>
+        <div class="nav-links">
+          <a href="dashboard.php" class="nav-link">Dashboard</a>
+          <a href="todo.html" class="nav-link">To-Do List</a>
+          <a href="workout.html" class="nav-link">Home Workout</a>
+          <a href="notepad.html" class="nav-link">Notepad</a>
+          <button class="theme-toggle" title="Toggle Dark Mode">
+            <i class="fas fa-moon"></i>
+          </button>
+        </div>
+        <button class="mobile-menu" title="Toggle Menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section animate__animated animate__fadeIn">
+      <div class="container">
+        <h1>Transform Your Body</h1>
+        <p>
+          Start your fitness journey today with our curated workout programs
+        </p>
+        <div class="hero-stats">
+          <div class="stat-item">
+            <i class="fas fa-users"></i>
+            <span>10K+ Active Users</span>
+          </div>
+          <div class="stat-item">
+            <i class="fas fa-fire"></i>
+            <span>50K+ Calories Burned</span>
+          </div>
+          <div class="stat-item">
+            <i class="fas fa-clock"></i>
+            <span>100K+ Minutes Trained</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Workout Section -->
+    <section class="workout-section">
+      <div class="container">
+        <h1 class="section-title animate__animated animate__fadeIn">
+          Home Workout
+        </h1>
+
+        <!-- Workout Categories -->
+        <div class="workout-categories animate__animated animate__fadeIn">
+          <button class="category-btn active" data-category="all">
+            All Workouts
+          </button>
+          <button class="category-btn" data-category="strength">
+            Strength
+          </button>
+          <button class="category-btn" data-category="cardio">Cardio</button>
+          <button class="category-btn" data-category="yoga">Yoga</button>
+          <button class="category-btn" data-category="hiit">HIIT</button>
+          <button class="category-btn" data-category="pilates">Pilates</button>
+          <button class="category-btn" data-category="dance">Dance</button>
+          <button class="category-btn" data-category="boxing">Boxing</button>
+        </div>
+
+        <!-- Workout Grid -->
+        <div class="workout-grid">
+          <!-- Strength Workouts -->
+          <div
+            class="workout-card animate__animated animate__fadeInUp"
+            data-category="strength"
+          >
+            <div class="workout-image">
+              <img src="image/stretch.jpg" alt="Strength Workout" />
+              <div class="workout-overlay">
+                <span class="workout-duration">30 min</span>
+                <span class="workout-level">Beginner</span>
+              </div>
+            </div>
+            <div class="workout-content">
+              <h3>Full Body Strength</h3>
+              <p>
+                Build muscle and increase strength with this full-body workout
+                routine.
+              </p>
+              <div class="workout-stats">
+                <span><i class="fas fa-fire"></i> 300 cal</span>
+                <span><i class="fas fa-dumbbell"></i> 12 exercises</span>
+              </div>
+              <button
+                class="btn btn-primary start-workout"
+                data-workout="strength"
+              >
+                Start Workout
+              </button>
+            </div>
+          </div>
+
+          <!-- Upper Body Strength -->
+          <div
+            class="workout-card animate__animated animate__fadeInUp"
+            data-category="strength"
+          >
+            <div class="workout-image">
+              <img src="image/upperbody.jpg" alt="Upper Body Workout" />
+              <div class="workout-overlay">
+                <span class="workout-duration">40 min</span>
+                <span class="workout-level">Advanced</span>
+              </div>
+            </div>
+            <div class="workout-content">
+              <h3>Upper Body Power</h3>
+              <p>
+                Focus on chest, shoulders, and arms with this intense workout.
+              </p>
+              <div class="workout-stats">
+                <span><i class="fas fa-fire"></i> 350 cal</span>
+                <span><i class="fas fa-dumbbell"></i> 10 exercises</span>
+              </div>
+              <button
+                class="btn btn-primary start-workout"
+                data-workout="upperBody"
+              >
+                Start Workout
+              </button>
+            </div>
+          </div>
+
+          <!-- Cardio Workouts -->
+          <div
+            class="workout-card animate__animated animate__fadeInUp"
+            data-category="cardio"
+          >
+            <div class="workout-image">
+              <img src="image/core4.jpg" alt="Cardio Workout" />
+              <div class="workout-overlay">
+                <span class="workout-duration">20 min</span>
+                <span class="workout-level">Intermediate</span>
+              </div>
+            </div>
+            <div class="workout-content">
+              <h3>HIIT Cardio</h3>
+              <p>
+                High-intensity interval training to boost your metabolism and
+                burn calories.
+              </p>
+              <div class="workout-stats">
+                <span><i class="fas fa-fire"></i> 250 cal</span>
+                <span><i class="fas fa-dumbbell"></i> 8 exercises</span>
+              </div>
+              <button
+                class="btn btn-primary start-workout"
+                data-workout="cardio"
+              >
+                Start Workout
+              </button>
+            </div>
+          </div>
+
+          <!-- Running Cardio -->
+          <div
+            class="workout-card animate__animated animate__fadeInUp"
+            data-category="cardio"
+          >
+            <div class="workout-image">
+              <img src="image/run.jpg" alt="Running Workout" />
+              <div class="workout-overlay">
+                <span class="workout-duration">35 min</span>
+                <span class="workout-level">Intermediate</span>
+              </div>
+            </div>
+            <div class="workout-content">
+              <h3>Endurance Running</h3>
+              <p>Build stamina and improve cardiovascular health.</p>
+              <div class="workout-stats">
+                <span><i class="fas fa-fire"></i> 450 cal</span>
+                <span><i class="fas fa-road"></i> 5km</span>
+              </div>
+              <button
+                class="btn btn-primary start-workout"
+                data-workout="running"
+              >
+                Start Workout
+              </button>
+            </div>
+          </div>
+
+          <!-- Yoga Workouts -->
+          <div
+            class="workout-card animate__animated animate__fadeInUp"
+            data-category="yoga"
+          >
+            <div class="workout-image">
+              <img src="image/yoga.jpg" alt="Yoga Workout" />
+              <div class="workout-overlay">
+                <span class="workout-duration">45 min</span>
+                <span class="workout-level">All Levels</span>
+              </div>
+            </div>
+            <div class="workout-content">
+              <h3>Morning Yoga Flow</h3>
+              <p>
+                Start your day with this energizing yoga sequence for mind and
+                body.
+              </p>
+              <div class="workout-stats">
+                <span><i class="fas fa-fire"></i> 200 cal</span>
+                <span><i class="fas fa-spa"></i> 15 poses</span>
+              </div>
+              <button class="btn btn-primary start-workout" data-workout="yoga">
+                Start Workout
+              </button>
+            </div>
+          </div>
+
+          <!-- Power Yoga -->
+          <div
+            class="workout-card animate__animated animate__fadeInUp"
+            data-category="yoga"
+          >
+            <div class="workout-image">
+              <img src="image/yoga2.jpg" alt="Power Yoga" />
+              <div class="workout-overlay">
+                <span class="workout-duration">50 min</span>
+                <span class="workout-level">Advanced</span>
+              </div>
+            </div>
+            <div class="workout-content">
+              <h3>Power Yoga Flow</h3>
+              <p>Dynamic yoga sequence to build strength and flexibility.</p>
+              <div class="workout-stats">
+                <span><i class="fas fa-fire"></i> 300 cal</span>
+                <span><i class="fas fa-spa"></i> 20 poses</span>
+              </div>
+              <button
+                class="btn btn-primary start-workout"
+                data-workout="powerYoga"
+              >
+                Start Workout
+              </button>
+            </div>
+          </div>
+
+          <!-- HIIT Workouts -->
+          <div
+            class="workout-card animate__animated animate__fadeInUp"
+            data-category="hiit"
+          >
+            <div class="workout-image">
+              <img src="image/cardio2.jpg" alt="HIIT Workout" />
+              <div class="workout-overlay">
+                <span class="workout-duration">25 min</span>
+                <span class="workout-level">Advanced</span>
+              </div>
+            </div>
+            <div class="workout-content">
+              <h3>Tabata HIIT</h3>
+              <p>20/10 work-rest ratio for maximum calorie burn.</p>
+              <div class="workout-stats">
+                <span><i class="fas fa-fire"></i> 300 cal</span>
+                <span><i class="fas fa-bolt"></i> 8 exercises</span>
+              </div>
+              <button class="btn btn-primary start-workout" data-workout="hiit">
+                Start Workout
+              </button>
+            </div>
+          </div>
+
+          <!-- Core HIIT -->
+          <div
+            class="workout-card animate__animated animate__fadeInUp"
+            data-category="hiit"
+          >
+            <div class="workout-image">
+              <img src="image/core3.jpg" alt="Core HIIT" />
+              <div class="workout-overlay">
+                <span class="workout-duration">20 min</span>
+                <span class="workout-level">Intermediate</span>
+              </div>
+            </div>
+            <div class="workout-content">
+              <h3>Core Crusher HIIT</h3>
+              <p>Intense core-focused HIIT workout.</p>
+              <div class="workout-stats">
+                <span><i class="fas fa-fire"></i> 250 cal</span>
+                <span><i class="fas fa-bolt"></i> 6 exercises</span>
+              </div>
+              <button
+                class="btn btn-primary start-workout"
+                data-workout="coreHiit"
+              >
+                Start Workout
+              </button>
+            </div>
+          </div>
+
+          <!-- Pilates Workouts -->
+          <div
+            class="workout-card animate__animated animate__fadeInUp"
+            data-category="pilates"
+          >
+            <div class="workout-image">
+              <img src="image/core.jpg" alt="Pilates Workout" />
+              <div class="workout-overlay">
+                <span class="workout-duration">40 min</span>
+                <span class="workout-level">Intermediate</span>
+              </div>
+            </div>
+            <div class="workout-content">
+              <h3>Core Pilates</h3>
+              <p>Strengthen your core and improve posture.</p>
+              <div class="workout-stats">
+                <span><i class="fas fa-fire"></i> 250 cal</span>
+                <span><i class="fas fa-dumbbell"></i> 10 exercises</span>
+              </div>
+              <button
+                class="btn btn-primary start-workout"
+                data-workout="pilates"
+              >
+                Start Workout
+              </button>
+            </div>
+          </div>
+
+          <!-- Advanced Pilates -->
+          <div
+            class="workout-card animate__animated animate__fadeInUp"
+            data-category="pilates"
+          >
+            <div class="workout-image">
+              <img src="image/cardio.jpg" alt="Advanced Pilates" />
+              <div class="workout-overlay">
+                <span class="workout-duration">50 min</span>
+                <span class="workout-level">Advanced</span>
+              </div>
+            </div>
+            <div class="workout-content">
+              <h3>Advanced Pilates Flow</h3>
+              <p>Challenge your body with advanced Pilates movements.</p>
+              <div class="workout-stats">
+                <span><i class="fas fa-fire"></i> 300 cal</span>
+                <span><i class="fas fa-dumbbell"></i> 15 exercises</span>
+              </div>
+              <button
+                class="btn btn-primary start-workout"
+                data-workout="advancedPilates"
+              >
+                Start Workout
+              </button>
+            </div>
+          </div>
+
+          <!-- Dance Workouts -->
+          <div
+            class="workout-card animate__animated animate__fadeInUp"
+            data-category="dance"
+          >
+            <div class="workout-image">
+              <img src="image/zumba.jpg" alt="Dance Workout" />
+              <div class="workout-overlay">
+                <span class="workout-duration">45 min</span>
+                <span class="workout-level">Beginner</span>
+              </div>
+            </div>
+            <div class="workout-content">
+              <h3>Zumba Dance Party</h3>
+              <p>Fun and energetic dance workout to burn calories.</p>
+              <div class="workout-stats">
+                <span><i class="fas fa-fire"></i> 400 cal</span>
+                <span><i class="fas fa-music"></i> 8 routines</span>
+              </div>
+              <button
+                class="btn btn-primary start-workout"
+                data-workout="dance"
+              >
+                Start Workout
+              </button>
+            </div>
+          </div>
+
+          <!-- Boxing Workouts -->
+          <div
+            class="workout-card animate__animated animate__fadeInUp"
+            data-category="boxing"
+          >
+            <div class="workout-image">
+              <img src="image/boxing.jpg" alt="Boxing Workout" />
+              <div class="workout-overlay">
+                <span class="workout-duration">35 min</span>
+                <span class="workout-level">Intermediate</span>
+              </div>
+            </div>
+            <div class="workout-content">
+              <h3>Boxing Cardio</h3>
+              <p>High-intensity boxing workout for strength and endurance.</p>
+              <div class="workout-stats">
+                <span><i class="fas fa-fire"></i> 450 cal</span>
+                <span><i class="fas fa-fist-raised"></i> 10 rounds</span>
+              </div>
+              <button
+                class="btn btn-primary start-workout"
+                data-workout="boxing"
+              >
+                Start Workout
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Workout Progress -->
+        <div class="workout-progress animate__animated animate__fadeIn">
+          <h2 class="section-subtitle">Your Progress</h2>
+          <div class="progress-stats">
+            <div class="progress-card">
+              <i class="fas fa-calendar-check"></i>
+              <h3>Workouts This Week</h3>
+              <p id="weeklyWorkouts">0</p>
+            </div>
+            <div class="progress-card">
+              <i class="fas fa-fire"></i>
+              <h3>Calories Burned</h3>
+              <p id="caloriesBurned">0</p>
+            </div>
+            <div class="progress-card">
+              <i class="fas fa-clock"></i>
+              <h3>Total Minutes</h3>
+              <p id="totalMinutes">0</p>
+            </div>
+            <div class="progress-card">
+              <i class="fas fa-trophy"></i>
+              <h3>Achievements</h3>
+              <p id="achievements">0</p>
+            </div>
+          </div>
+          <button id="resetProgress" class="reset-btn">
+            <i class="fas fa-redo"></i>
+            Start from Scratch
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Workout Modals -->
+    <div class="modal" id="strengthModal">
+      <div class="modal-content">
+        <span class="close-btn">&times;</span>
+        <h2>Full Body Strength</h2>
+        <p><strong>Duration:</strong> 30 min</p>
+        <p><strong>Level:</strong> Beginner</p>
+        <iframe
+          width="560"
+          height="315"
+          src="https://www.youtube.com/embed/gC_L9qAHVJ8?si=N6_mwOsAKT7E4hiz"
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allowfullscreen
+        ></iframe>
+        <h3>Workout Steps</h3>
+        <ol>
+          <li>Warm up with 5 minutes of light cardio</li>
+          <li>Complete 3 sets of 12 reps for each exercise</li>
+          <li>Focus on proper form and controlled movements</li>
+          <li>Rest 60 seconds between sets</li>
+          <li>Finish with 5 minutes of stretching</li>
+        </ol>
+      </div>
+    </div>
+
+    <div class="modal" id="upperBodyModal">
+      <div class="modal-content">
+        <span class="close-btn">&times;</span>
+        <h2>Upper Body Power</h2>
+        <p><strong>Duration:</strong> 40 min</p>
+        <p><strong>Level:</strong> Advanced</p>
+        <iframe
+          src="https://www.youtube.com/embed/Iv7RaQ6gF60?si=Zrn_XFrfxNtoCOpr"
+          allowfullscreen
+        ></iframe>
+        <h3>Workout Steps</h3>
+        <ol>
+          <li>Start with 10 minutes of dynamic stretching</li>
+          <li>Complete 4 sets of 8-10 reps for each exercise</li>
+          <li>Focus on proper form and controlled movements</li>
+          <li>Rest 90 seconds between sets</li>
+          <li>Finish with 5 minutes of stretching</li>
+        </ol>
+      </div>
+    </div>
+
+    <div class="modal" id="cardioModal">
+      <div class="modal-content">
+        <span class="close-btn">&times;</span>
+        <h2>HIIT Cardio</h2>
+        <p><strong>Duration:</strong> 20 min</p>
+        <p><strong>Level:</strong> Intermediate</p>
+        <iframe
+          width="560"
+          height="315"
+          src="https://www.youtube.com/embed/Ba3qZjzPonI?si=WxvOE3EQdnUQVFGY"
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allowfullscreen
+        ></iframe>
+        <h3>Workout Steps</h3>
+        <ol>
+          <li>Warm up with 3 minutes of light cardio</li>
+          <li>30 seconds high intensity, 30 seconds rest</li>
+          <li>Repeat circuit 4 times</li>
+          <li>1 minute rest between circuits</li>
+          <li>Cool down with 3 minutes of stretching</li>
+        </ol>
+      </div>
+    </div>
+
+    <div class="modal" id="runningModal">
+      <div class="modal-content">
+        <span class="close-btn">&times;</span>
+        <h2>Endurance Running</h2>
+        <p><strong>Duration:</strong> 35 min</p>
+        <p><strong>Level:</strong> Intermediate</p>
+        <iframe
+          width="560"
+          height="315"
+          src="https://www.youtube.com/embed/saXF2xH3A2U?si=5HvW29U-ltnrbjDi"
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allowfullscreen
+        ></iframe>
+        <h3>Workout Steps</h3>
+        <ol>
+          <li>5 minutes warm-up walk</li>
+          <li>25 minutes steady pace running</li>
+          <li>5 minutes cool-down walk</li>
+          <li>Focus on breathing and form</li>
+          <li>Stay hydrated throughout</li>
+        </ol>
+      </div>
+    </div>
+
+    <div class="modal" id="yogaModal">
+      <div class="modal-content">
+        <span class="close-btn">&times;</span>
+        <h2>Morning Yoga Flow</h2>
+        <p><strong>Duration:</strong> 45 min</p>
+        <p><strong>Level:</strong> All Levels</p>
+        <iframe
+          width="560"
+          height="315"
+          src="https://www.youtube.com/embed/Yh6UyZEZs5U?si=pA5GbVroeUEpVcVz"
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allowfullscreen
+        ></iframe>
+        <h3>Workout Steps</h3>
+        <ol>
+          <li>5 minutes meditation</li>
+          <li>10 minutes sun salutations</li>
+          <li>20 minutes standing poses</li>
+          <li>5 minutes seated poses</li>
+          <li>5 minutes final relaxation</li>
+        </ol>
+      </div>
+    </div>
+
+    <div class="modal" id="powerYogaModal">
+      <div class="modal-content">
+        <span class="close-btn">&times;</span>
+        <h2>Power Yoga Flow</h2>
+        <p><strong>Duration:</strong> 50 min</p>
+        <p><strong>Level:</strong> Advanced</p>
+        <iframe
+          width="560"
+          height="315"
+          src="https://www.youtube.com/embed/f7_zx1sPBj0?si=ouQd2QMzefCSZh54"
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allowfullscreen
+        ></iframe>
+        <h3>Workout Steps</h3>
+        <ol>
+          <li>5 minutes warm-up flow</li>
+          <li>20 minutes power poses</li>
+          <li>15 minutes balance poses</li>
+          <li>5 minutes inversions</li>
+          <li>5 minutes cool-down</li>
+        </ol>
+      </div>
+    </div>
+
+    <div class="modal" id="hiitModal">
+      <div class="modal-content">
+        <span class="close-btn">&times;</span>
+        <h2>Tabata HIIT</h2>
+        <p><strong>Duration:</strong> 25 min</p>
+        <p><strong>Level:</strong> Advanced</p>
+        <iframe
+          width="560"
+          height="315"
+          src="https://www.youtube.com/embed/V4MqB6q3w44?si=4rLdqC5kPIvSQ8g_"
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allowfullscreen
+        ></iframe>
+        <h3>Workout Steps</h3>
+        <ol>
+          <li>5 minutes warm-up</li>
+          <li>8 rounds of 20/10 intervals</li>
+          <li>1 minute rest between rounds</li>
+          <li>Maximum effort during work periods</li>
+          <li>5 minutes cool-down</li>
+        </ol>
+      </div>
+    </div>
+
+    <div class="modal" id="coreHiitModal">
+      <div class="modal-content">
+        <span class="close-btn">&times;</span>
+        <h2>Core Crusher HIIT</h2>
+        <p><strong>Duration:</strong> 20 min</p>
+        <p><strong>Level:</strong> Intermediate</p>
+        <iframe
+          width="560"
+          height="315"
+          src="https://www.youtube.com/embed/RcLz_atcq8w?si=fHaK1HylRgWWSZGU"
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allowfullscreen
+        ></iframe>
+        <h3>Workout Steps</h3>
+        <ol>
+          <li>3 minutes warm-up</li>
+          <li>6 core-focused exercises</li>
+          <li>30 seconds work, 30 seconds rest</li>
+          <li>Repeat circuit 3 times</li>
+          <li>2 minutes cool-down</li>
+        </ol>
+      </div>
+    </div>
+
+    <div class="modal" id="pilatesModal">
+      <div class="modal-content">
+        <span class="close-btn">&times;</span>
+        <h2>Core Pilates</h2>
+        <p><strong>Duration:</strong> 40 min</p>
+        <p><strong>Level:</strong> Intermediate</p>
+        <iframe
+          width="560"
+          height="315"
+          src="https://www.youtube.com/embed/sQp904QUFc0?si=1957gGub25Ffop7y"
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allowfullscreen
+        ></iframe>
+        <h3>Workout Steps</h3>
+        <ol>
+          <li>5 minutes warm-up</li>
+          <li>10 core-focused exercises</li>
+          <li>Focus on breathing and control</li>
+          <li>30 seconds rest between exercises</li>
+          <li>5 minutes cool-down</li>
+        </ol>
+      </div>
+    </div>
+
+    <div class="modal" id="advancedPilatesModal">
+      <div class="modal-content">
+        <span class="close-btn">&times;</span>
+        <h2>Advanced Pilates Flow</h2>
+        <p><strong>Duration:</strong> 50 min</p>
+        <p><strong>Level:</strong> Advanced</p>
+        <iframe
+          width="560"
+          height="315"
+          src="https://www.youtube.com/embed/IsdWFVYdJ_0?si=AITLi4QPNwjU1IC9"
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allowfullscreen
+        ></iframe>
+        <h3>Workout Steps</h3>
+        <ol>
+          <li>5 minutes warm-up</li>
+          <li>15 advanced exercises</li>
+          <li>Focus on precision and flow</li>
+          <li>45 seconds rest between exercises</li>
+          <li>5 minutes cool-down</li>
+        </ol>
+      </div>
+    </div>
+
+    <div class="modal" id="danceModal">
+      <div class="modal-content">
+        <span class="close-btn">&times;</span>
+        <h2>Zumba Dance Party</h2>
+        <p><strong>Duration:</strong> 45 min</p>
+        <p><strong>Level:</strong> Beginner</p>
+        <iframe
+          width="560"
+          height="315"
+          src="https://www.youtube.com/embed/mZeFvX3ALKY?si=j5RbhJpNaB7-b8Sy"
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allowfullscreen
+        ></iframe>
+        <h3>Workout Steps</h3>
+        <ol>
+          <li>5 minutes warm-up dance</li>
+          <li>8 different dance routines</li>
+          <li>30 seconds rest between routines</li>
+          <li>Focus on having fun</li>
+          <li>5 minutes cool-down</li>
+        </ol>
+      </div>
+    </div>
+
+    <div class="modal" id="boxingModal">
+      <div class="modal-content">
+        <span class="close-btn">&times;</span>
+        <h2>Boxing Cardio</h2>
+        <p><strong>Duration:</strong> 35 min</p>
+        <p><strong>Level:</strong> Intermediate</p>
+        <iframe
+          width="560"
+          height="315"
+          src="https://www.youtube.com/embed/PfKeCuAgm1Y?si=vbm7dg0iRjuMSGjx"
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allowfullscreen
+        ></iframe>
+        <h3>Workout Steps</h3>
+        <ol>
+          <li>5 minutes warm-up</li>
+          <li>10 rounds of boxing combinations</li>
+          <li>1 minute rest between rounds</li>
+          <li>Focus on form and technique</li>
+          <li>5 minutes cool-down</li>
+        </ol>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-info">
+            <h3>Activity Tracker</h3>
+            <p>Your personal productivity companion</p>
+          </div>
+          <div class="social-links">
+            <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>
+            &copy; <span id="year"></span> Activity Tracker. All rights
+            reserved.
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="wk.js"></script>
+  </body>
+</html>

@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>To-Do List - Activity Tracker</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="todo.css" />
+  </head>
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar" aria-label="Main Navigation">
+      <div class="container">
+        <a href="mainpage.html" class="logo" aria-label="Activity Tracker Home">
+          <i class="fas fa-chart-line"></i>
+          ActivityTracker
+        </a>
+        <div class="nav-links" id="navLinks">
+          <a href="dashboard.php">Dashboard</a>
+          <a href="todo.html">To-Do List</a>
+          <a href="workout.html">Home Workout</a>
+          <a href="notepad.html">Notepad</a>
+        </div>
+        <div
+          class="hamburger"
+          id="hamburger"
+          aria-label="Open navigation menu"
+          tabindex="0"
+          role="button"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Loader -->
+    <div id="loader" class="loader" aria-live="polite" style="display: none">
+      <div class="spinner"></div>
+      <span>Loading your tasks...</span>
+    </div>
+
+    <!-- Split Screen Container -->
+    <div class="split-container">
+      <!-- Left Panel - Todo Section -->
+      <div class="left-panel">
+        <section class="todo-section" aria-labelledby="todo-title">
+          <div class="container">
+            <h1 class="section-title" id="todo-title">To-Do List</h1>
+
+            <!-- Add Todo Form -->
+            <form
+              class="todo-form"
+              autocomplete="off"
+              aria-label="Add new task"
+              onsubmit="return false;"
+            >
+              <input
+                type="text"
+                id="todoInput"
+                placeholder="Add a new task..."
+                aria-label="Task description"
+              />
+              <button
+                id="addTodo"
+                class="btn btn-primary"
+                aria-label="Add Task"
+              >
+                <i class="fas fa-plus"></i> Add Task
+              </button>
+            </form>
+
+            <!-- Todo Categories -->
+            <div
+              class="todo-categories"
+              role="tablist"
+              aria-label="Task categories"
+            >
+              <button
+                class="category-btn active"
+                data-category="all"
+                role="tab"
+                aria-selected="true"
+              >
+                All
+              </button>
+              <button
+                class="category-btn"
+                data-category="today"
+                role="tab"
+                aria-selected="false"
+              >
+                Today
+              </button>
+              <button
+                class="category-btn"
+                data-category="upcoming"
+                role="tab"
+                aria-selected="false"
+              >
+                Upcoming
+              </button>
+              <button
+                class="category-btn"
+                data-category="completed"
+                role="tab"
+                aria-selected="false"
+              >
+                Completed
+              </button>
+            </div>
+
+            <!-- Todo List -->
+            <div class="todo-list" id="todoList" aria-live="polite">
+              <!-- Todo items will be added here dynamically -->
+            </div>
+
+            <!-- Empty State -->
+            <div id="emptyState" class="empty-state" style="display: none">
+              <img
+                src="https://assets10.lottiefiles.com/packages/lf20_jzv1zqtk.json"
+                alt="No tasks illustration"
+                class="empty-illustration"
+              />
+              <p>No tasks yet. Add your first task!</p>
+            </div>
+
+            <!-- Todo Stats -->
+            <div class="todo-stats">
+              <div class="stat-card">
+                <i class="fas fa-tasks"></i>
+                <h3>Total Tasks</h3>
+                <p id="totalTasks">0</p>
+              </div>
+              <div class="stat-card">
+                <i class="fas fa-check-circle"></i>
+                <h3>Completed</h3>
+                <p id="completedTasks">0</p>
+              </div>
+              <div class="stat-card">
+                <i class="fas fa-clock"></i>
+                <h3>Pending</h3>
+                <p id="pendingTasks">0</p>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <!-- Right Panel - Progress and Schedule -->
+      <div class="right-panel">
+        <!-- Weekly Schedule Section (Current Day Only) -->
+        <section
+          class="week-schedule-section"
+          aria-labelledby="week-schedule-title"
+        >
+          <div class="container">
+            <h2 class="section-title" id="week-schedule-title">
+              Weekly Schedule
+            </h2>
+            <div class="week-schedule" id="weekSchedule">
+              <!-- All 7 days will be rendered here by JS -->
+            </div>
+          </div>
+        </section>
+
+        <!-- Unified Progress Section -->
+        <section class="progress-section" aria-labelledby="progress-title">
+          <div class="container">
+            <h2 class="section-title" id="progress-title">Your Progress</h2>
+            <div class="progress-summary">
+              <div class="progress-bar-container">
+                <div class="progress-bar-bg">
+                  <div
+                    class="progress-bar-fill"
+                    id="progressBarFill"
+                    style="width: 0%"
+                  ></div>
+                </div>
+                <span class="progress-percent" id="progressPercent">0%</span>
+              </div>
+              <div class="progress-stats">
+                <div class="progress-stat">
+                  <span class="progress-label">Total Tasks</span>
+                  <span class="progress-value" id="progressTotal">0</span>
+                </div>
+                <div class="progress-stat">
+                  <span class="progress-label">Completed</span>
+                  <span class="progress-value" id="progressCompleted">0</span>
+                </div>
+                <div class="progress-stat">
+                  <span class="progress-label">Pending</span>
+                  <span class="progress-value" id="progressPending">0</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-info">
+            <h3>Activity Tracker</h3>
+            <p>Your personal productivity companion</p>
+          </div>
+          <div class="social-links">
+            <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>
+            &copy; <span id="year"></span> Activity Tracker. All rights
+            reserved.
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Edit Modal -->
+    <div
+      id="editModal"
+      class="modal"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="editModalTitle"
+      style="display: none"
+    >
+      <div class="modal-content">
+        <h2 id="editModalTitle">Edit Task</h2>
+        <input type="text" id="editInput" aria-label="Edit task" />
+        <div class="modal-actions">
+          <button id="saveEdit" class="btn btn-primary">Save</button>
+          <button id="cancelEdit" class="btn btn-secondary">Cancel</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="todo.js"></script>
+  </body>
+</html>

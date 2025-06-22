@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Notepad</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        padding: 0;
+        background: linear-gradient(135deg, #9a9aec, #b48ff6);
+        font-family: "Verdana", monospace;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+
+      #navbar {
+        background-color: #333;
+        position: absolute;
+        top: 0;
+        width: 100%;
+        z-index: 1000;
+      }
+
+      .menu {
+        list-style: none;
+        display: flex;
+        margin: 0;
+        padding: 0 12px;
+      }
+
+      .menu > li {
+        position: relative;
+      }
+
+      .menu > li > a {
+        display: block;
+        padding: 10px 16px;
+        text-decoration: none;
+        color: white;
+        font-weight: 500;
+        cursor: pointer;
+      }
+
+      .menu > li:hover {
+        background-color: rgb(160, 157, 157);
+      }
+
+      .dropdown {
+        display: none;
+        position: absolute;
+        top: 36px;
+        left: 0;
+        background-color: #fff;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+        border: 1px solid #ccc;
+        z-index: 1000;
+        min-width: 140px;
+      }
+
+      .dropdown li a {
+        display: block;
+        padding: 8px 14px;
+        color: #333;
+        text-decoration: none;
+      }
+
+      .dropdown li a:hover {
+        background-color: #dcdcdc;
+      }
+
+      .menu > li:hover .dropdown {
+        display: block;
+      }
+
+      body {
+        padding-top: 50px;
+      }
+
+      #window {
+        width: 1445px;
+        height: auto;
+        background: rgba(105, 98, 98, 0.1);
+        border-radius: 5px;
+        padding: 15px;
+        color: #080808;
+        backdrop-filter: blur(14px);
+        box-shadow: 0 10px 40px rgba(142, 138, 138, 0.3);
+        position: relative;
+        transition: all 0.3s ease;
+      }
+
+      #buttons {
+        position: absolute;
+        right: 20px;
+        top: 10px;
+      }
+
+      #buttons a {
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        margin-left: 8px;
+        transition: transform 0.3s ease;
+        cursor: pointer;
+        font-size: 16px;
+        font-weight: bold;
+        color: rgb(58, 57, 57);
+        text-decoration: none;
+        user-select: none;
+      }
+
+      #buttons a:hover {
+        transform: scale(1.2);
+      }
+
+      #minimize {
+        background: white;
+      }
+      #resize {
+        background: white;
+      }
+      #close {
+        background: white;
+      }
+
+      #title {
+        font-size: 1.2rem;
+        margin-bottom: 12px;
+        padding-left: 10px;
+        border-left: 4px solid #050505;
+        font-weight: bold;
+      }
+
+      #toolbar {
+        margin-bottom: 10px;
+        display: flex;
+        gap: 10px;
+        align-items: center;
+      }
+
+      #toolbar button {
+        padding: 6px 10px;
+        border: 1px solid #000;
+        background-color: #eee;
+        cursor: pointer;
+        border-radius: 4px;
+      }
+
+      #fontSizeSlider {
+        vertical-align: middle;
+      }
+
+      #fontSizeValue {
+        font-weight: bold;
+        margin-left: 8px;
+      }
+
+      #toolbar input[type="range"] {
+        width: 120px;
+      }
+
+      #textarea {
+        width: 102%;
+        height: 550px;
+        background: rgba(255, 255, 255, 0.762);
+        border: 1px solid #080808;
+        resize: none;
+        padding: 12px;
+        border-radius: 5px;
+        color: #080808;
+        font-size: 1rem;
+        outline: none;
+        transition: height 0.3s ease;
+        white-space: pre-wrap;
+      }
+
+      textarea::placeholder {
+        color: #454444;
+      }
+
+      .actions {
+        margin-top: 12px;
+        text-align: right;
+      }
+
+      .actions button {
+        background: #08050561;
+        border: none;
+        padding: 8px 16px;
+        border-radius: 6px;
+        color: #fff;
+        cursor: pointer;
+        font-family: inherit;
+        font-size: 0.9rem;
+        transition: background 0.3s ease;
+        border: 1px dotted #050505;
+      }
+
+      .actions button:hover {
+        background: #fbfafa0f;
+      }
+    </style>
+  </head>
+  <body>
+    <nav id="navbar">
+      <ul class="menu">
+        <li>
+          <a href="#">File</a>
+          <ul class="dropdown">
+            <li><a href="#" onclick="saveNotes()">Save</a></li>
+            <li><a href="#" onclick="clearNotes()">Clear</a></li>
+            <li><a href="#" onclick="window.print()">Print</a></li>
+            <li><a href="#" onclick="window.close()">Exit</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#">Edit</a>
+          <ul class="dropdown">
+            <li><a href="#" onclick="document.execCommand('cut')">Cut</a></li>
+            <li><a href="#" onclick="document.execCommand('copy')">Copy</a></li>
+            <li>
+              <a href="#" onclick="document.execCommand('paste')">Paste</a>
+            </li>
+            <li><a href="#" onclick="textarea.select()">Select All</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#">View</a>
+          <ul class="dropdown">
+            <li><a href="#" onclick="resizeBtn.click()">Resize</a></li>
+            <li><a href="#" onclick="minimizeBtn.click()">Minimize</a></li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+
+    <div id="window">
+      <div id="buttons">
+        <a id="minimize" title="Minimize">-</a>
+        <a id="resize" title="Maximize">▭</a>
+        <a id="close" title="Close">x</a>
+      </div>
+
+      <div id="title">Notepad</div>
+
+      <div id="toolbar">
+        <button onclick="formatText('bold')"><b>B</b></button>
+        <button onclick="formatText('italic')"><i>I</i></button>
+        <button onclick="formatText('underline')"><u>U</u></button>
+        <button onclick="formatText('strikeThrough')"><s>S</s></button>
+        Font Size:
+        <input type="range" id="fontSizeSlider" min="12" max="40" value="16" />
+        <span id="fontSizeValue">16px</span>
+      </div>
+      <div
+        id="textarea"
+        contenteditable="true"
+        placeholder="Start writing your notes here..."
+      ></div>
+    </div>
+
+    <script>
+      const textarea = document.getElementById("textarea");
+      const notepad = document.getElementById("window");
+      const closeBtn = document.getElementById("close");
+      const minimizeBtn = document.getElementById("minimize");
+      const resizeBtn = document.getElementById("resize");
+      const fontSizeSlider = document.getElementById("fontSizeSlider");
+      const fontSizeValue = document.getElementById("fontSizeValue");
+
+      let isMaximized = false;
+
+      function formatText(command) {
+        document.execCommand(command, false, null);
+      }
+
+      function changeFontSize() {
+        const selection = window.getSelection();
+        if (!selection.rangeCount) return;
+
+        const range = selection.getRangeAt(0);
+        const span = document.createElement("span");
+
+        span.style.fontSize = fontSizeSlider.value + "px";
+
+        range.surroundContents(span);
+      }
+
+      fontSizeSlider.addEventListener("change", changeFontSize);
+
+      window.onload = () => {
+        const savedText = localStorage.getItem("notepad-text");
+        if (savedText) textarea.innerHTML = savedText;
+      };
+
+      function saveNotes() {
+        localStorage.setItem("notepad-text", textarea.innerHTML);
+        alert("Notes saved successfully!");
+      }
+
+      function clearNotes() {
+        if (confirm("Are you sure you want to clear your notes?")) {
+          textarea.innerHTML = "";
+          localStorage.removeItem("notepad-text");
+        }
+      }
+
+      closeBtn.onclick = () => (notepad.style.display = "none");
+
+      minimizeBtn.onclick = () => {
+        textarea.style.height = "0";
+        textarea.style.padding = "0";
+        textarea.placeholder = "start writing your notes here...";
+      };
+
+      resizeBtn.onclick = () => {
+        textarea.style.height = isMaximized ? "510px" : "360px";
+        isMaximized = !isMaximized;
+      };
+
+      fontSizeSlider.addEventListener("input", () => {
+        const size = fontSizeSlider.value;
+        fontSizeValue.textContent = fontSizeSlider.value + "px";
+        textarea.style.fontSize = fontSizeSlider.value + "px";
+        console.log("Font size set to:", size);
+      });
+    </script>
+  </body>
+</html>
