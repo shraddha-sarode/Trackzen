@@ -33,7 +33,8 @@ Helps users stay aware of their productivity and achievements over time.
 Unified Interface
 Combines all features in one clean, user-friendly dashboard.
 Eliminates the need to switch between multiple apps, improving efficiency and focus.
-Register/Login Page
+
+### Register/Login Page
 <img width="1912" height="836" alt="Screenshot 2025-06-23 123037" src="https://github.com/user-attachments/assets/245affed-e389-4972-b209-4bcedb743a83" />
 
 User Activity Tracker UI
