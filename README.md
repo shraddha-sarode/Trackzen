@@ -37,19 +37,19 @@ Eliminates the need to switch between multiple apps, improving efficiency and fo
 ### Register/Login Page
 <img width="1912" height="836" alt="Screenshot 2025-06-23 123037" src="https://github.com/user-attachments/assets/245affed-e389-4972-b209-4bcedb743a83" />
 
-User Activity Tracker UI
+### User Activity Tracker UI
 <img width="1906" height="854" alt="Screenshot 2025-06-20 142656" src="https://github.com/user-attachments/assets/d14f8710-f55e-44cf-b731-0a9bbe8da1d4" />
 
-ToDoList
+### ToDoList
 <img width="1905" height="875" alt="Screenshot 2025-06-22 131545" src="https://github.com/user-attachments/assets/3a8fe29c-a558-4f5a-afb4-e1b6d3a2ca9a" />
 
-Workout
+### Workout
 <img width="1914" height="875" alt="Screenshot 2025-06-20 142825" src="https://github.com/user-attachments/assets/77741e08-4a86-4764-af24-f2915fc3afaf" />
 
-Notepad
+### Notepad
 <img width="1896" height="858" alt="Screenshot 2025-06-20 142850" src="https://github.com/user-attachments/assets/16430080-5b7e-4edd-b4a2-1b255f736d98" />
 
-User Dashboard
+### User Dashboard
 <img width="1919" height="864" alt="Screenshot 2025-06-22 131559" src="https://github.com/user-attachments/assets/5a8cb1c9-3bb3-49d3-b969-6042e48cb389" />
 
 
