@@ -1,8 +1,8 @@
 # TrackZen
 # Definition
-🧠 TrackZen – All-in-One Productivity Companion
+🧠 TrackZen All-in-One Productivity Companion
 Have you ever struggled to manage your tasks across multiple apps, only to end up overwhelmed and unorganized? Balancing professional responsibilities and personal goals becomes chaotic when productivity is scattered.
-To solve this, I created TrackZen — a unified productivity tool that brings together your To-Do List, Notepad, and Workout Tracker in one seamless platform. With TrackZen, you can manage tasks, take notes, track workouts, and monitor your progress — all in one place.
+To solve this, I created TrackZen a unified productivity tool that brings together your To-Do List, Notepad, and Workout Tracker in one seamless platform. With TrackZen, you can manage tasks, take notes, track workouts, and monitor your progress — all in one place.
 Let’s simplify productivity. Let’s meet TrackZen.
 # Problem Statement
 In today’s fast-paced world, individuals often rely on multiple separate applications to manage their daily activities from tracking tasks and writing notes to monitoring fitness goals. This fragmented approach leads to inefficiency, reduced focus, and poor time management. Constantly switching between apps can be overwhelming and disrupt the flow of productivity, making it difficult to maintain balance between personal and professional life.
@@ -52,7 +52,37 @@ Eliminates the need to switch between multiple apps, improving efficiency and fo
 ### User Dashboard
 <img width="1919" height="864" alt="Screenshot 2025-06-22 131559" src="https://github.com/user-attachments/assets/5a8cb1c9-3bb3-49d3-b969-6042e48cb389" />
 
+🔐 User Authentication
+### Create register/login forms using HTML.
+Use PHP to validate input and store user data in MySQL.
+Secure passwords with password_hash() and manage sessions.
 
+### 🧠 Dashboard
+Display user info (name, email, registration time) after login.
+
+### 📋 To-Do List
+CRUD operations for tasks linked to user ID.
+Store tasks in MySQL and show completed/pending status.
+### 📝 Notepad
+Simple notes interface with save/edit/delete.
+Store content with timestamps in MySQL.
+### 🏋️ Workout Tracker
+Log workout name, duration, and date.
+Save workout history
+### 🌐 Hosting with XAMPP
+Place project in htdocs.
+Started Apache & MySQL via XAMPP.
+Use localhost/project_name to run the app.
+Manage database with phpMyAdmin.
+
+# 🚀 Technologies Used
+| **HTML5** | <img src="https://img.icons8.com/color/48/html-5--v1.png" width="40"/>
+| **CSS3** | <img src="https://img.icons8.com/color/48/css3.png" width="40"/> 
+| **JavaScript** | <img src="https://img.icons8.com/color/48/javascript--v1.png" width="40"/>
+| **PHP** | <img src="https://img.icons8.com/officel/48/php-logo.png" width="40"/>
+| **MySQL** | <img src="https://img.icons8.com/ios-filled/50/mysql-logo.png" width="40"/>
+| **XAMPP** | <img src="https://img.icons8.com/color/48/xampp.png" width="40"/> 
+| **phpMyAdmin** | <img src="https://img.icons8.com/external-tal-revivo-color-tal-revivo/48/external-phpmyadmin-a-free-software-tool-written-in-php-intended-to-handle-the-administration-logo-color-tal-revivo.png" width="40"/> 
 
 
 
