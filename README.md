@@ -76,15 +76,15 @@ Use localhost/project_name to run the app.
 Manage database with phpMyAdmin.
 
 # 🚀 Technologies Used
-<img src="https://img.icons8.com/color/48/html-5--v1.png" width="40"/>
+### HTML <img src="https://img.icons8.com/color/48/html-5--v1.png" width="40"/>
 
-<img src="https://img.icons8.com/color/48/css3.png" width="40"/> 
+### CSS<img src="https://img.icons8.com/color/48/css3.png" width="40"/> 
 
-<img src="https://img.icons8.com/color/48/javascript--v1.png" width="40"/>
-| **PHP** | <img src="https://img.icons8.com/officel/48/php-logo.png" width="40"/>
-| **MySQL** | <img src="https://img.icons8.com/ios-filled/50/mysql-logo.png" width="40"/>
-| **XAMPP** | <img src="https://img.icons8.com/color/48/xampp.png" width="40"/> 
-| **phpMyAdmin** | <img src="https://img.icons8.com/external-tal-revivo-color-tal-revivo/48/external-phpmyadmin-a-free-software-tool-written-in-php-intended-to-handle-the-administration-logo-color-tal-revivo.png" width="40"/> 
+### Javascript <img src="https://img.icons8.com/color/48/javascript--v1.png" width="40"/>
+### PHP  <img src="https://img.icons8.com/officel/48/php-logo.png" width="40"/>
+### MySQL <img src="https://img.icons8.com/ios-filled/50/mysql-logo.png" width="40"/>
+### XAMPP <img src="https://img.icons8.com/color/48/xampp.png" width="40"/> 
+### phpMyAdmin <img src="https://img.icons8.com/external-tal-revivo-color-tal-revivo/48/external-phpmyadmin-a-free-software-tool-written-in-php-intended-to-handle-the-administration-logo-color-tal-revivo.png" width="40"/> 
 
 
 
