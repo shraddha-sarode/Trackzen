@@ -76,9 +76,9 @@ Use localhost/project_name to run the app.
 Manage database with phpMyAdmin.
 
 # 🚀 Technologies Used
-### HTML <img src="https://img.icons8.com/color/48/html-5--v1.png" width="40"/>
+### HTML5 <img src="https://img.icons8.com/color/48/html-5--v1.png" width="40"/>
 
-### CSS<img src="https://img.icons8.com/color/48/css3.png" width="40"/> 
+### CSS3 <img src="https://img.icons8.com/color/48/css3.png" width="40"/> 
 
 ### Javascript <img src="https://img.icons8.com/color/48/javascript--v1.png" width="40"/>
 ### PHP  <img src="https://img.icons8.com/officel/48/php-logo.png" width="40"/>
